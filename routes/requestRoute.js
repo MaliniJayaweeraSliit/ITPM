@@ -12,4 +12,14 @@ router.get("/getallrequests", async (req, res) => {
   }
 });
 
+router.post("/getrequestbyid", async (req, res) => {
+  const requestid = req.body.requestid
+  try {
+    const request = await Request.findOne({_id: requestid});
+    res.send(request)
+  } catch (error) {
+    return res.status(400).json({message: error});
+  }
+});
+
 module.exports = router;

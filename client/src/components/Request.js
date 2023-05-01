@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
+import {Link}  from 'react-router-dom'
 
 
 function Request({request}) {
@@ -23,6 +24,9 @@ function Request({request}) {
         <p>Date of Event: {request.date}</p>
     </b>
     <div style={{float: "right"}}>
+      <Link to={`/book/${request._id}`}>
+      <button className='btn btn-primary m-2'>Request</button>
+      </Link>
     <button className="btn btn-primary" onClick={handleShow}>View Details</button>
     </div>
     </div>
