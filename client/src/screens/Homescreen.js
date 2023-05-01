@@ -24,8 +24,8 @@ function Homescreen() {
   }, []);
 
   return (
-    <div>
-      <div className="row">
+    <div className="container">
+      <div className="row justify-content-center">
       {loading ? (
         <h1>Loading...</h1>
       ) : error ? (
