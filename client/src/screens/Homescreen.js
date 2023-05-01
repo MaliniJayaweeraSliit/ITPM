@@ -25,7 +25,7 @@ function Homescreen() {
 
   return (
     <div className="container">
-      <div className="row justify-content-center">
+      <div className="row justify-content-center mt-5">
       {loading ? (
         <h1>Loading...</h1>
       ) : error ? (

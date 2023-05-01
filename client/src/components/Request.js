@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Carousel from 'react-bootstrap/Carousel';
+
 
 function Request({request}) {
     const [show, setShow] = useState(false);
@@ -21,24 +23,33 @@ function Request({request}) {
         <p>Date of Event: {request.date}</p>
     </b>
     <div style={{float: "right"}}>
-    <button className="btn btn-primary">View Details</button>
+    <button className="btn btn-primary" onClick={handleShow}>View Details</button>
     </div>
     </div>
-    <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+
+      <Modal show={show} onHide={handleClose} size='lg'>
+        <Modal.Header>
+          <Modal.Title>{request.name}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+        <Carousel>
+            {request.imageurls.map(url => {
+              return    <Carousel.Item>
+              <img
+                className="d-block w-100 bigimg"
+                src={url}
+                alt="First slide"
+              />
+      
+            </Carousel.Item> 
+            })}
+        </Carousel>
+        <p>{request.description}</p>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
