@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Loader from '../components/Loader';
+import Error from '../components/Error'
 
 function Requestscreen() {
   const [requests, setRequests] = useState(null);
@@ -28,7 +30,7 @@ function Requestscreen() {
 
   return (
     <div className='m-5'>
-     {loading ? (<h1>Loading...</h1>): error ? (<h1>Error...</h1>) : (<div>
+     {loading ? (<h1><Loader/></h1>): error ? (<Error/>) : (<div>
       <div className='row justify-content-center mt-5 bs'>
         <div className='col-md-6'>
           <h1>{requests.name}</h1>
