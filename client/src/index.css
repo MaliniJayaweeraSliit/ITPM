@@ -99,3 +99,8 @@ h2 {
   padding: 10px;
   font-weight: bold;
 }
+
+.dropdown-toggle{
+  border: 0px solid black !important;
+
+}
