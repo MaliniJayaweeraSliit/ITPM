@@ -2,14 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Loader from '../components/Loader';
-import Error from '../components/Error'
+import Error from '../components/Error';
+import moment from 'moment';
 
 function Requestscreen() {
   const [requests, setRequests] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState();
+  const [error, setError] = useState(false);
 
-  const { requestid } = useParams();
+  const { requestid, fromdate, todate } = useParams();
+
+  const fromdateObj = moment(fromdate, 'DD-MM-YYYY');
+  const todateObj = moment(todate, 'DD-MM-YYYY');
+
+  const totaldays = moment.duration(todateObj.diff(fromdateObj)).asDays() + 1;
+  // const totalfoods = totaldays * requests.neededfoods;
 
   useEffect(() => {
     async function getRequestById() {
@@ -30,39 +37,46 @@ function Requestscreen() {
 
   return (
     <div className='m-5'>
-     {loading ? (<h1><Loader/></h1>): error ? (<Error/>) : (<div>
-      <div className='row justify-content-center mt-5 bs'>
-        <div className='col-md-6'>
-          <h1>{requests.name}</h1>
-          <img src={requests.imageurls[0]} className='bigimg' alt=''/>
+      {loading ? (
+        <h1>
+          <Loader />
+        </h1>
+      ) : error ? (
+        <Error />
+      ) : (
+        <div>
+          <div className='row justify-content-center mt-5 bs'>
+            <div className='col-md-6'>
+              <h1>{requests?.name}</h1>
+              <img src={requests?.imageurls[0]} className='bigimg' alt='' />
+            </div>
+            <div className='col-md-6'>
+              <div style={{ textAlign: 'right' }}>
+                <h1>Request Details</h1>
+                <hr />
+                <b>
+                  <p>Name : </p>
+                  <p>From Date : {fromdate}</p>
+                  <p>To Date : {todate}</p>
+                  <p>Needed Foods : {requests?.neededfoods}</p>
+                </b>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <b>
+                  <h1>Amount</h1>
+                  <hr />
+                  <p>Total Days: {totaldays}</p>
+                  <p>Needed foods per day : {requests?.neededfoods}</p>
+                  <p>Total Needed Foods: {requests?.neededfoods * totaldays}</p>
+                </b>
+              </div>
+              <div style={{ float: 'right' }}>
+                <button className='btn btn-primary'>Request Now</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='col-md-6'>
-          <div style={{textAlign: 'right'}}>
-          <h1>Request Details</h1>
-          <hr/>
-          <b>
-          <p>Name : </p>
-          <p>From Date :</p>
-          <p>To Date :</p>
-          <p>Needed Foods : {requests.neededfoods}</p>
-          </b>
-          </div>
-          <div style={{textAlign: 'right'}}>
-            <b>
-            <h1>Amount</h1>
-            <hr/>
-            <p>Total Days: </p>
-            <p>Needed foods per day : {requests.neededfoods}</p>
-            <p>Total Needed Foods</p>
-            </b>
-          </div>
-          <div style={{float: "right"}}>
-            <button className='btn btn-primary'>Request Now</button>
-          </div>
-          
-        </div>
-      </div>
-     </div>)}
+      )}
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import {Link}  from 'react-router-dom'
 
 
-function Request({request}) {
+function Request({request, fromdate, todate}) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -24,7 +24,7 @@ function Request({request}) {
         <p>Date of Event: {request.date}</p>
     </b>
     <div style={{float: "right"}}>
-      <Link to={`/book/${request._id}`}>
+      <Link to={`/book/${request._id}/${fromdate}/${todate}`}>
       <button className='btn btn-primary m-2'>Request</button>
       </Link>
     <button className="btn btn-primary" onClick={handleShow}>View Details</button>

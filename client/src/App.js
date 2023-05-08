@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
         <Route path="/home" exact Component={Homescreen}/>
-        <Route path='/book/:requestid' exact Component={Requestscreen} />
+        <Route path='/book/:requestid/:fromdate/:todate' exact Component={Requestscreen} />
         <Route path='/register' exact Component={Registerscreen}/>
         <Route path='/login' exact Component={Loginscreen}/>
 
