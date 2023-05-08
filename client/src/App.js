@@ -1,13 +1,17 @@
-// import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AddPayment from './Pages/AddPayments';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-    </div>
-  );
-}
-
-export default App;
+      <div className='App'>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/createPayment' exact element={<AddPayment />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  }
+  
+  export default App;
