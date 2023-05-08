@@ -29,10 +29,10 @@ const requestSchema = mongoose.Schema({
         type: Number,
         require: true
     },
-    serviceid: {
-        type: Number,
+    donationid: {
+        type: String,
         require: true
-    },
+      },
     status: {
         type: String,
         require: true,
@@ -41,6 +41,9 @@ const requestSchema = mongoose.Schema({
 }, {timestamps : true,
 })
 
-const requestingmodel = mongoose.model('resquesting', requestSchema);
+const requestingmodel = mongoose.model('requesting', requestSchema);
 
 module.exports = requestingmodel
+
+
+

@@ -9,6 +9,7 @@ function Requestscreen() {
   const [requests, setRequests] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const { requestid, fromdate, todate } = useParams();
 
@@ -16,7 +17,7 @@ function Requestscreen() {
   const todateObj = moment(todate, 'DD-MM-YYYY');
 
   const totaldays = moment.duration(todateObj.diff(fromdateObj)).asDays() + 1;
-  // const totalfoods = totaldays * requests.neededfoods;
+  const totalfoods = requests ? requests.neededfoods * totaldays : null;
 
   useEffect(() => {
     async function getRequestById() {
@@ -34,6 +35,23 @@ function Requestscreen() {
     }
     getRequestById();
   }, [requestid]);
+
+  async function requestFood() {
+    const requestingDetails = {
+      requests: requests,
+      userid: JSON.parse(localStorage.getItem('currentUser'))._id,
+      fromdate,
+      todate,
+      totalfoods,
+      totaldays,
+    };
+
+    try {
+      const result = await axios.post('/api/foodrequests/requestfood', requestingDetails)
+    }catch (error) {
+
+    }
+  }
 
   return (
     <div className='m-5'>
@@ -55,7 +73,7 @@ function Requestscreen() {
                 <h1>Request Details</h1>
                 <hr />
                 <b>
-                  <p>Name : </p>
+                  <p>Name : {JSON.parse(localStorage.getItem('currentUser')).name}</p>
                   <p>From Date : {fromdate}</p>
                   <p>To Date : {todate}</p>
                   <p>Needed Foods : {requests?.neededfoods}</p>
@@ -67,11 +85,11 @@ function Requestscreen() {
                   <hr />
                   <p>Total Days: {totaldays}</p>
                   <p>Needed foods per day : {requests?.neededfoods}</p>
-                  <p>Total Needed Foods: {requests?.neededfoods * totaldays}</p>
+                  <p>Total Needed Foods: {totalfoods}</p>
                 </b>
               </div>
               <div style={{ float: 'right' }}>
-                <button className='btn btn-primary'>Request Now</button>
+                <button className='btn btn-primary' onClick={requestFood}>Request Now</button>
               </div>
             </div>
           </div>

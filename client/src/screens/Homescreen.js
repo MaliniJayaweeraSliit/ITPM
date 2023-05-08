@@ -34,6 +34,8 @@ function Homescreen() {
     fetchData();
   }, []);
 
+  
+
   function filterByDate(date) {
     console.log("date:", date);
     console.log(moment(date[0]).format('DD-MM-YYYY'))
