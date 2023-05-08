@@ -9,18 +9,18 @@ const {
   } = require('../controllers/payments.controller');
 
 //add new payment
-router.post('/addPayment', addPayment);
+router.post('/addpayment', addPayment);
 
 // get all payments
-router.get('/getPayments',getPayments);
+router.get('/getpayments',getPayments);
 
 // delete specific payment
-router.get('/deletePayment/:id', deletePayment);
+router.get('/deletepayment/:id', deletePayment);
 
 // Search for payment
 router.get('/search/:id',getPayment);
 
 //Update Payment
-router.post('/updatePayment/:id',updatePayment);
+router.post('/updatepayment/:id',updatePayment);
 
 module.exports = router;
