@@ -24,9 +24,13 @@ function Request({request, fromdate, todate}) {
         <p>Date of Event: {request.date}</p>
     </b>
     <div style={{float: "right"}}>
-      <Link to={`/book/${request._id}/${fromdate}/${todate}`}>
-      <button className='btn btn-primary m-2'>Request</button>
-      </Link>
+
+    {(fromdate && todate) && (
+         <Link to={`/book/${request._id}/${fromdate}/${todate}`}>
+         <button className='btn btn-primary m-2'>Request</button>
+         </Link>
+                  )}
+                  
     <button className="btn btn-primary" onClick={handleShow}>View Details</button>
     </div>
     </div>
