@@ -5,6 +5,7 @@ const {
     getVolunteer,
     addVolunteer,
     deleteVolunteer,
+    updateVolunteer,
     login,
 } = require('../controllers/volunteer.controller.js')
 

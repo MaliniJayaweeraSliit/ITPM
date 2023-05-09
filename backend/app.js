@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require ('body-parser');
 const cors =require('cors');
 const volunteerRoutes= require('./routes/volunteers.routes');
+const paymentRoutes= require('./routes/payment.routes');
  require('dotenv').config();
 
 // app config
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 
 //routes
 app.use('/volunteers', volunteerRoutes);
+app.use('/payments', paymentRoutes);
 
 
 // connect to db
@@ -33,7 +35,7 @@ mongoose
   });
 
 //port
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);

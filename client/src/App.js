@@ -1,10 +1,9 @@
-// import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AddPayment from './Pages/AddPayments';
 
 function App() {
   return (
-<<<<<<< Updated upstream
     <div className="App">
       <Navbar/>
     </div>
@@ -12,14 +11,3 @@ function App() {
 }
 
 export default App;
-=======
-      <div className='App'>
-        <BrowserRouter>
-          <Routes></Routes>
-        </BrowserRouter>
-      </div>
-    );
-  }
-  
-  export default App;
->>>>>>> Stashed changes
