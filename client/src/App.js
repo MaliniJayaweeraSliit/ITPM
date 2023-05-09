@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
+<<<<<<< Updated upstream
     <div className="App">
       <Navbar/>
     </div>
@@ -11,3 +12,14 @@ function App() {
 }
 
 export default App;
+=======
+      <div className='App'>
+        <BrowserRouter>
+          <Routes></Routes>
+        </BrowserRouter>
+      </div>
+    );
+  }
+  
+  export default App;
+>>>>>>> Stashed changes
