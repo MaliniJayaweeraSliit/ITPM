@@ -4,14 +4,10 @@ import AddPayment from './Pages/AddPayments';
 
 function App() {
   return (
-      <div className='App'>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/createPayment' exact element={<AddPayment />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    );
-  }
-  
-  export default App;
+    <div className="App">
+      <Navbar/>
+    </div>
+  );
+}
+
+export default App;
