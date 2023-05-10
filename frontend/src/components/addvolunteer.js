@@ -1,19 +1,16 @@
 import React from 'react';
-import './src/components/addvolunteerstyles.css'
+
+import './addvolunteerstyles.css';
 
 export default function Addvolunteer() {
    return (
       <>
       <div className='container'>
-
       <header data-thq="thq-navbar" className='navbar'>
         <span className='logo'>DonateThem</span>
         <div
-
           data-thq="thq-navbar-nav"
-
           data-role="Nav"
-
           className='desktop-menu'
 
         >
@@ -45,24 +42,17 @@ export default function Addvolunteer() {
           <div className='socials'>
 
             <button
-
               className='button'
-
             >
               <img
                 alt="imageofweb"
                 src="/playground_assets/twitter.svg"
                 className='image'
               />
-
             </button>
-
             <button
-
               className='button'
-
             >
-
               <img
 
                 alt="imageofweb"
@@ -138,7 +128,6 @@ export default function Addvolunteer() {
               className='nav2'
 
             >
-
               <span className='text'>About</span>
 
               <span className='text01'>Features</span>
