@@ -2,6 +2,7 @@ import React from 'react';
 
 import './addvolunteerstyles.css';
 
+
 export default function Addvolunteer() {
    return (
       <>
@@ -46,7 +47,7 @@ export default function Addvolunteer() {
             >
               <img
                 alt="imageofweb"
-                src="/playground_assets/twitter.svg"
+                src="/Assets/Icons/twitter.png"
                 className='image'
               />
             </button>
@@ -57,7 +58,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/discord.svg"
+                src="/Assets/Icons/discord.png"
 
                 className='image01'
 
@@ -77,7 +78,7 @@ export default function Addvolunteer() {
 
           <button
 
-            className={` $'button' $'button4' `}
+            className='button4'
 
           >
 
@@ -240,7 +241,7 @@ export default function Addvolunteer() {
 
           alt="imageofweb"
 
-          src="/playground_assets/hero-divider-1500w.png"
+          src="Assets/Assests/hero-divider.png"
 
           className='divider-image'
 
@@ -298,7 +299,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/avatar.svg"
+                src="/Assets/Avatars/avatar.png"
 
                 className='avatar1'
 
@@ -340,7 +341,7 @@ export default function Addvolunteer() {
 
                   alt="imageofweb"
 
-                  src="/playground_assets/arrow.svg"
+                  src="/Assets/Icons/arrow.png"
 
                   className='image02'
 
@@ -360,7 +361,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/default-avatar.svg"
+                src="/Assets/Avatars/default-avatar.png"
 
                 className='avatar3'
 
@@ -402,7 +403,7 @@ export default function Addvolunteer() {
 
                  alt="imageofweb"
 
-                  src="/playground_assets/arrow-2.svg"
+                  src="/Assets/Icons/arrow-2.png"
 
                   className='image03'
 
@@ -411,84 +412,6 @@ export default function Addvolunteer() {
               </button>
 
             </div>
-
-          </div>
-
-        </div>
-
-        <div className='card02'>
-
-          <div className='avatar4'>
-
-            <img
-
-              alt="imageofweb"
-
-              src="/playground_assets/light-avatar.svg"
-
-              className='avatar5'
-
-            />
-
-          </div>
-
-          <div className='row1'>
-
-            <div className='main2'>
-
-              <div className='content03'>
-
-                <h2 className='header3'>
-
-                  Create yourself for the metaverse
-
-                </h2>
-
-                <p className='description4'>
-
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-
-                  do eiusmod tempor incididunt ut labore et dolore magna aliquat
-
-                  enim ad minim veniam, quis nostrud exercitation ullamco
-
-                  laboris nisi
-
-                </p>
-
-              </div>
-
-              <button
-
-                className={` $'learn3' $'button' `}
-
-              >
-
-                <span className='text07'>Learn more</span>
-
-                <img
-
-                  alt="imageofweb"
-
-                  src="/playground_assets/arrow-2.svg"
-
-                  className='image04'
-
-                />
-
-              </button>
-
-            </div>
-
-            <img
-
-              alt="imageofweb"
-
-              src="/playground_assets/group%202262.svg"
-
-              className='image05'
-
-            />
 
           </div>
 
@@ -550,7 +473,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-1.svg"
+                src="/Assets/Characters/character-1.png"
 
                 className='image07'
 
@@ -576,7 +499,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-2.svg"
+                src="/Assets/Characters/character-2.png"
 
                 className='image09'
 
@@ -602,7 +525,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-3.svg"
+                src="/Assets/Characters/character-3.png"
 
                 className='image11'
 
@@ -628,7 +551,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-4.svg"
+                src="/Assets/Characters/character-4.png"
 
                 className='image13'
 
@@ -660,7 +583,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-5.svg"
+                src="/Assets/Characters/character-5.png"
 
                 className='image15'
 
@@ -686,7 +609,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-6.svg"
+                src="/Assets/Characters/character-6.png"
 
                 className='image17'
 
@@ -712,7 +635,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-7.svg"
+                src="/Assets/Characters/character-7.png"
 
                 className='image19'
 
@@ -738,7 +661,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-8.svg"
+                src="/Assets/Characters/character-8.png"
 
                 className='image21'
 
@@ -782,7 +705,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-9.svg"
+                src="/Assets/Characters/character-10.png"
 
                 className='image22'
 
@@ -800,7 +723,7 @@ export default function Addvolunteer() {
 
                 alt="imageofweb"
 
-                src="/playground_assets/character-10.svg"
+                src="/Assets/Characters/character-9.png"
 
                 className='image23'
 
