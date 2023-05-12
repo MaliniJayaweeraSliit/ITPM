@@ -40,15 +40,6 @@
 .home-button {
   color: rgb(255, 255, 255);
 }
-.home-button1 {
-  color: rgb(255, 255, 255);
-}
-.home-button2 {
-  color: rgb(255, 255, 255);
-}
-.home-button3 {
-  color: rgb(255, 255, 255);
-}
 .home-btn-group {
   gap: var(--dl-space-space-fourunits);
   display: flex;
@@ -646,17 +637,12 @@
     align-items: center;
     flex-direction: row;
   }
-  .button {
+  .button{
     color: white;
-  }
-  .button1 {
-    color: white;
-  }
-  .button2 {
-    color: white;
-  }
-  .button3 {
-    color: white;
+  align-self: center;
+  font-size:50px;
+  text-align: center;
+  background-color: rgb(157, 218, 219);
   }
   .btn-group {
     gap: 4px;
@@ -818,9 +804,7 @@
     align-items: center;
     flex-direction: row;
   }
-  .learn {
-    color: white;
-  }
+  
   .description {
     gap: 120px;
     width: 100%;
