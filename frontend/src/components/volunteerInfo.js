@@ -1,6 +1,6 @@
 import React from 'react';
 import './addvolunteerstyles.css';
-export default function Addvolunteer() {
+export default function volunteerInfo() {
   return (
     <>
       <div className="home-container">
