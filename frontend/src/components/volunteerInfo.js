@@ -10,8 +10,8 @@ export default function volunteerInfo() {
             <p className='caption'>    A character custom collection is joining the NFT space on Opensea.  </p>
           </div>
           <div className='buttons'>
-            <button className='button'>LOGIN</button>
-            <button className="button"   > Create an account  </button>
+            <a href="./loginvolunteer"> <button  className='button'>LOGIN</button></a>
+            <a href="./addvolunteer"> <button className="button"   > Create an account  </button></a>
           </div>
         </section>
         <section className='description'>
