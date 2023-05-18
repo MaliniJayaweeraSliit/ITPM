@@ -10,19 +10,19 @@ const {
 } = require('../controllers/volunteer.controller.js')
 
 // get all students
-router.get('/getoperators', getVolunteers);
+router.get('/getvolunteers', getVolunteers);
 
 // get a single student
-router.get('/getoperator:id', getVolunteer);
+router.get('/getvolunteer:id', getVolunteer);
 
 // add a new student
-router.post('/addoperator', addVolunteer);
+router.post('/addvolunteer', addVolunteer);
 
 // delete a student
-router.delete('/deleteoperator:id', deleteVolunteer);
+router.delete('/deletevolunteer:id', deleteVolunteer);
 
 // update a student
-router.patch('/updateoperator:id', updateVolunteer);
+router.patch('/updatevolunteer:id', updateVolunteer);
 
 router.patch('/login', login);
 
