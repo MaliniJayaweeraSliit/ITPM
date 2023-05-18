@@ -1,4 +1,4 @@
-let Payment = require("../models/payments.models")
+let Payment = require("../models/payments.models").default
 
 //Add new payments
 
