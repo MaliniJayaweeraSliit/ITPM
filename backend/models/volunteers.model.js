@@ -20,6 +20,10 @@ const volunteersSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  volunteer_username: {
+    type: String,
+    required: true,
+  },
   email: {
     type: String,
     trim: true,

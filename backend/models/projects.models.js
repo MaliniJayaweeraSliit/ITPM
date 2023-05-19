@@ -23,7 +23,6 @@ const projectSchema = new Schema({
         type : String,
         required : true
     },
-    
 
     projectStartDate : {
         type : Date,

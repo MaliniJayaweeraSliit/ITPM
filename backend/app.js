@@ -18,7 +18,7 @@ app.use(cors());
 //routes
 app.use('/volunteers', volunteerRoutes);
 app.use('/project', projectsRoutes);
-// app.use('/application', applicationRoutes);
+app.use('/application', applicationRoutes);
 
 // connect to db
 const dotenv = require('dotenv');

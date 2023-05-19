@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import './project.css';
 import './addvolunteerstyles.css';
 
 export default function LoginVolunteer() {
@@ -22,7 +21,7 @@ export default function LoginVolunteer() {
                 console.log("login success")
                 console.log(result.data)
                 const id = result.data["volunteer"][0]["_id"]
-                history(`/viewvolunteer/${id}/true`);
+                history(`/volunteers/getvolunteer/${id}/true`);
             } else {
                 alert("Login failed,Try Again")
             }

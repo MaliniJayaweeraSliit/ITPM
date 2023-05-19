@@ -1,0 +1,31 @@
+.headingtext{
+    font-size: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+}
+.headinginput{
+    width:50%;
+    height: 20px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px ;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.maindiv{
+    width: 80%;
+    height: 100;
+    
+}
+.mainmaindiv{
+    width: 80%;
+    height: 100%;
+    
+}
+.subdiv{
+    height: 50%;
+    border: 1px;
+    border-color: aliceblue;
+}

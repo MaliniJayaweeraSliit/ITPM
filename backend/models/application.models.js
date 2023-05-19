@@ -2,19 +2,17 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema;
 const applicationSchema = new Schema({
-    applicationid : {
-        type : String,
+    applicationid:{
+        type: Number,
+        default : null
+    },
+    volunteerNic:{
+        type: String,
         required : true
     },
-
     projectID : {
-        type : String,
-        required : true
-    },
-
-    volunteer: {
-        type : String,
-        required : true
+        type : Number,
+        default : null
     },
 
 })

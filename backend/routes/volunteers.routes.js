@@ -13,16 +13,16 @@ const {
 router.get('/getvolunteers', getVolunteers);
 
 // get a single student
-router.get('/getvolunteer:id', getVolunteer);
+router.get('/getvolunteer/:id', getVolunteer);
 
 // add a new student
 router.post('/addvolunteer', addVolunteer);
 
 // delete a student
-router.delete('/deletevolunteer:id', deleteVolunteer);
+router.delete('/deletevolunteer/:id', deleteVolunteer);
 
 // update a student
-router.patch('/updatevolunteer:id', updateVolunteer);
+router.patch('/updatevolunteer/:id', updateVolunteer);
 
 router.patch('/volunteer_login', login);
 
