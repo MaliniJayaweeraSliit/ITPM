@@ -1,26 +1,26 @@
 const router = require('express').Router();
 
 const {
-    addPayment,
-    getPayments,
-    deletePayment,
-    getPayment, 
-    updatePayment
-  } = require('../controllers/payments.controller');
+    getProjects,
+    getProject,
+    addProject,
+    deleteProject,
+    updateProject,
+} = require('../controllers/projects.controller.js')
 
-//add new payment
-router.post('/addpayment', addPayment);
+// get all students
+router.get('/getprojects', getProjects);
 
-// get all payments
-router.get('/getpayments',getPayments);
+// get a single student
+router.get('/getproject:id', getProject);
 
-// delete specific payment
-router.get('/deletepayment/:id', deletePayment);
+// add a new student
+router.post('/addproject', addProject);
 
-// Search for payment
-router.get('/search/:id',getPayment);
+// delete a student
+router.delete('/deleteproject:id', deleteProject);
 
-//Update Payment
-router.post('/updatepayment/:id',updatePayment);
+// update a student
+router.patch('/updateproject:id', updateProject);
 
 module.exports = router;

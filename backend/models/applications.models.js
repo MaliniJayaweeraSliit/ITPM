@@ -13,7 +13,7 @@ const applicationSchema = new Schema({
     },
 
     volunteer: {
-        type : Array,
+        type : String,
         required : true
     },
 

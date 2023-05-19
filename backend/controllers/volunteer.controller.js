@@ -31,14 +31,15 @@ const getVolunteer = async (req, res) => {
 //add new Volunteer
 
 const addVolunteer = async (req, res) => {
-  const phone = Number(req.body.epfno);
-  const {NIC,volunteer_name, email, password,birth_day} =
+  const {NIC,volunteer_firstname,volunteer_lastname,volunteer_username, email, password,birth_day,phone} =
     req.body;
 
   try {
     const newvolunteer = await Volunteer.create({
       NIC,
-      volunteer_name,
+      volunteer_firstname,
+      volunteer_lastname,
+      volunteer_username,
       email,
       password,
       phone,

@@ -4,7 +4,7 @@ import Addvolunteer from './components/addvolunteer';
 import VolunteerInfo from './components/volunteerInfo';
 import LoginVolunteer from './components/loginvolunteer';
 import VolunteerHome from './components/volunteerHome';
-import addVolproject from './components/addvolproject';
+import AddVolproject from './components/addvolproject';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
     <Route path='/volunteerhome' element={<VolunteerInfo/>} />
     <Route path='/loginvolunteer' element={<LoginVolunteer/>} />
     <Route path='/homevolunteer' element={<VolunteerHome/>} />
-    <Route path='/addproject' element={<addVolproject/>} />
+    <Route path='/addproject' element={<AddVolproject/>} />
       </Routes>
       </BrowserRouter>
   );

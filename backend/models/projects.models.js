@@ -2,7 +2,15 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema;
 const projectSchema = new Schema({
+    projectOwnerid:{
+        type: Number,
+        default : null
+    },
     projectID : {
+        type : Number,
+        default : null
+    },
+    projectName : {
         type : String,
         required : true
     },
@@ -11,6 +19,11 @@ const projectSchema = new Schema({
         type : String,
         required : true
     },
+    projectCategoty : {
+        type : String,
+        required : true
+    },
+    
 
     projectStartDate : {
         type : Date,
@@ -23,7 +36,6 @@ const projectSchema = new Schema({
     },
     projectLocation: {
         type : String,
-        required : true
     }
 })
 

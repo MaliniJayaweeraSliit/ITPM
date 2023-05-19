@@ -1,4 +1,4 @@
-const Application = require('../models/application.model.js');
+const Application = require('../models/application.models');
 
 //get all Applications
 

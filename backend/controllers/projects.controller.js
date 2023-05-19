@@ -1,25 +1,29 @@
-let Payment = require("../models/payments.models").default
+let Project = require("../models/projects.models")
 
-//Add new payments
+//Add new projects
 
-const addPayment = async (req, res) => {
+const addProject = async (req, res) => {
      
-        const paymentID = req.body.paymentID;
-        const paymentDescription = req.body.paymentDescription;
-        const paymentCategory = req.body.paymentCategory;
-        const paymentDate = Date(req.body.paymentDate);
-        const paymentAmount = Number(req.body.paymentAmount);
+        const projectID = req.body.projectID;
+        const projectName = req.body.projectName;
+        const projectDescription = req.body.projectDescription;
+        const projectCategoty = req.body.projectCategoty;
+        const projectStartDate = Date(req.body.projectStartDate);
+        const projectEndDate = Date(req.body.projectEndDate);
+        const projectLocation = req.body.projectLocation;
 
-        const newPayment = new Payment({
-                paymentID,
-                paymentDescription,
-                paymentCategory,
-                paymentDate,
-                paymentAmount
+        const newProject = new Project({
+                projectID,
+                projectName,
+                projectDescription,
+                projectCategoty,
+                projectStartDate,
+                projectEndDate,
+                projectLocation
       })
   
-      newPayment.save().then(()=>{
-          res.json("Payment Added");
+      newProject.save().then(()=>{
+          res.json("Project Added");
       }).catch((err)=>{
           console.log(err);
       })
@@ -27,27 +31,27 @@ const addPayment = async (req, res) => {
     
   };
 
-  // Get all payments
+  // Get all projects
 
-    const getPayments = async (req, res) => {
+    const getProjects = async (req, res) => {
 
-    Payment.find().then((payments)=>{
-        res.json(payments)
+    Project.find().then((projects)=>{
+        res.json(projects)
     }).catch((err)=>{
         console.log(err);
     })
   
   };
 
-  // Delete Payments
+  // Delete Projects
 
- const deletePayment = async (req, res) => {
-    let paymentID  = req.params.id;
+ const deleteProject = async (req, res) => {
+    let projectID  = req.params.id;
   
-    await Payment.findByIdAndDelete(paymentID)
+    await Project.findByIdAndDelete(projectID)
   
     .then(() => {
-        res.status(200).send({status : "payment deleted"});    
+        res.status(200).send({status : "project deleted"});    
     }).catch((err) => {
         console.log(err);
         res.status(500).send({status: "error with delete data"});
@@ -55,47 +59,47 @@ const addPayment = async (req, res) => {
   };
 
  
-  //Search for payment
+  //Search for project
 
-const getPayment = async (req, res) => {
+const getProject = async (req, res) => {
 
-    let paymentId = req.params.id;
-    Payment.findById(paymentId)
-        .then((payment) => {
-            res.status(200).send({status: "Payment fetched", payment: payment})
+    let projectID = req.params.id;
+    Project.findById(projectID)
+        .then((project) => {
+            res.status(200).send({status: "Project fetched", project: project})
         }).catch((err) => {
             console.log(err);
-            res.status(500).send({status: "Error with get payment",error: err.message})
+            res.status(500).send({status: "Error with get project",error: err.message})
         })
    
 }
 
-// Update payment
+// Update project
 
-const updatePayment = async (req, res) => {
+const updateProject = async (req, res) => {
     const { id } = req.params;
 
-  const payment = await Payment.findOneAndUpdate(
+  const project = await Project.findOneAndUpdate(
     { _id: id },
     {
       ...req.body,
     }
   );
 
-  if (!payment) {
-    return res.status(400).json({ error: 'No such payment' });
+  if (!project) {
+    return res.status(400).json({ error: 'No such project' });
   } else {
-    return res.status(200).json(payment);
+    return res.status(200).json(project);
   }
 
 }
 
 
   module.exports = {
-    addPayment,
-    getPayments,
-    deletePayment,
-    getPayment,
-    updatePayment,
+    addProject,
+    getProjects,
+    deleteProject,
+    getProject,
+    updateProject,
     
   };

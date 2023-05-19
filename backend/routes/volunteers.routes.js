@@ -24,6 +24,6 @@ router.delete('/deletevolunteer:id', deleteVolunteer);
 // update a student
 router.patch('/updatevolunteer:id', updateVolunteer);
 
-router.patch('/login', login);
+router.patch('/volunteer_login', login);
 
 module.exports = router;
