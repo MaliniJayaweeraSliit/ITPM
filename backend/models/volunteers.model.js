@@ -6,12 +6,21 @@ var validateEmail = function (email) {
 };
 
 const volunteersSchema = new mongoose.Schema({
+
   NIC: {
     type: String,
     required: true,
     unique: true,
   },
-  volunteer_name: {
+  volunteer_firstname: {
+    type: String,
+    required: true,
+  },
+  volunteer_lastname: {
+    type: String,
+    required: true,
+  },
+  volunteer_username: {
     type: String,
     required: true,
   },
