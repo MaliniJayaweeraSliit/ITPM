@@ -11,13 +11,13 @@ body {
     
 }
 .form-bodyside{
-    justify-content:flex-end;
+    justify-content:center;
     
 }
 html, body {
     height: 100%;
     background-color: #152733;
-    overflow: hidden;
+    overflow:auto ;
 }
 
 
@@ -28,7 +28,7 @@ html, body {
       justify-content: center;
       align-items: center;
       text-align: center;
-      min-height: 100vh;
+      min-height: 85vh;
       width:1150px;
       margin-left: 25%;
 }
@@ -45,13 +45,12 @@ html, body {
     justify-content: center;
     align-items: center;
     align-items: center;
-    padding: 60px;
     background-color: #152733;
 }
 
 .form-content .form-items {
     border: 3px solid #fff;
-    padding: 40px;
+    padding: 30px;
     display: inline-block;
     width: 100%;
     min-width: 540px;
@@ -81,7 +80,7 @@ html, body {
     font-size: 20px;
     font-weight: 300;
     line-height: 20px;
-    margin-top: 5%;
+    margin-top: 4%;
 }
 
 
@@ -136,7 +135,6 @@ html, body {
     color: #8D8D8D;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    /* margin-top: 16px; */
 }
 
 .btn-primary{
@@ -154,7 +152,6 @@ html, body {
 .form-content textarea {
     position: static !important;
     width: 100%;
-    padding: 8px 20px;
     border-radius: 6px;
     text-align: left;
     background-color: #fff;
@@ -177,7 +174,6 @@ html, body {
 }
 
 .mv-up{
-    margin-top: -9px !important;
     margin-bottom: 8px !important;
 }
 

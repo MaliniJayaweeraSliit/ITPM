@@ -29,3 +29,24 @@
     border: 1px;
     border-color: aliceblue;
 }
+.buttonapply{
+    width: 200px;
+    background-color: green;
+}
+.projectbox{
+    display: flex;
+    width: 20px;
+}
+.projectboxbody{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+.cardproject{
+    width: 400px;
+    height:450px;
+    border-radius: 15px;
+    background-color: white;
+}
