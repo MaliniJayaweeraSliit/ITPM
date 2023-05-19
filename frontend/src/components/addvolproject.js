@@ -1,15 +1,19 @@
-import React, { useState} from "react";
+import React, { useEffect, useState, useRef} from "react";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './project.css';
 
 export default function AddVolproject() {
+    const {id, from_login} =useParams();
     const [projectName, setProjectName] = useState("");
+    const [ownerdata, setownerdata] = useState("");
     const [projectDescription, setProjectDescription] = useState("");
     const [projectCategoty, setProjectCategoty] = useState("");
     const [projectStartDate, setProjectStartDate] = useState("");
     const [projectEndDate , setProjectEndDate] = useState("");
     const [projectLocation, setProjectLocation] = useState("");
+
+    const Ownerid =useRef();
 
     const navigate = useNavigate();
 
@@ -24,23 +28,24 @@ export default function AddVolproject() {
             projectEndDate,
             projectLocation
         }
+        
         axios.post("http://localhost:4000/project/addproject", newProject).then(() => {
             ("Project added")
-            setProjectName('');
-            setProjectDescription('');
-            setProjectCategoty('');
-            setProjectStartDate('');
-            setProjectEndDate('');
-            setProjectLocation('');
 
             alert("project added");
-            navigate('/viewallproject')
+            navigate(`/organization/viewallprojects/${id}/from_login`)
 
         }).then().catch((err) => {
             alert(err)
         })
     }
-
+        useEffect(()=>{
+            axios.get(`http://localhost:4000/organization/getorganization/${id}`).then((res) => {
+                setownerdata(res.data);
+                {console.log(setownerdata)}
+        }).catch(err => console.log(`get owner data failed ${err}`))
+        },[id]);
+    
     return (
             <div className="form-body">
                 <div className="row">
@@ -48,9 +53,23 @@ export default function AddVolproject() {
                         <div className="form-content">
                             <div className="form-items">
                                 <h3>ADD A NEW VOLUNTEER PROJECT</h3>
-                                <form className="requires-validation" action="/thanksyou" method="post" onSubmit={sendData}>
+                                <form className="requires-validation" action="/thankyou" method="post" onSubmit={sendData}>
                                 <div>
+                                {ownerdata &&<div className="col-md-12">
+                                    
+                                     <p>Project Owner ID</p>
+                                        <input className="form-control" type="text" name="name" placeholder="ownerid" 
+                                        readOnly
+                                        defaultValue={ownerdata["id"] || ''}
+                                        ref={Ownerid}
+                                        
+                                        >
+                                            {console.log(Ownerid)}
+                                        </input>
+                                        
+                                    </div>}
                                 <div className="col-md-12">
+                                    
                                 <p>Project Name</p>
                                     <input className="form-control" type="text" name="name" placeholder="Project Name" 
                                     onChange={(e) => {
@@ -73,7 +92,7 @@ export default function AddVolproject() {
                                         onChange={(e) => {
                                             setProjectCategoty(e.target.value);
                                     }}>
-                                      <option selected disabled defaultValue="">Position</option>
+                                      <option selected disabled defaultValue="">Category</option>
                                       <option defaultValue="jweb">TRADITIONAL VOLUNTEERING</option>
                                       <option defaultValue="sweb">ONE OFF EVENTS</option>
                                       <option defaultValue="pmanager">SKILL FOCUSED ROLES</option>
@@ -85,7 +104,7 @@ export default function AddVolproject() {
                                     <p>Project Start Date</p>
                                     <input className="form-control" type="date" name="name" placeholder="Select start date" 
                                         onChange={(e) => {
-                                            setProjectCategoty(e.target.value);
+                                            setProjectStartDate(e.target.value);
                                         }}>
                                     </input>
                                 </div>
@@ -93,7 +112,7 @@ export default function AddVolproject() {
                                     <p>Project End Date</p>
                                     <input className="form-control" type="date" name="name" placeholder="Select start date" 
                                      onChange={(e) => {
-                                        setProjectStartDate(e.target.value);
+                                        setProjectEndDate(e.target.value);
                                     }}>
                                     </input>
                                 </div>
@@ -101,15 +120,14 @@ export default function AddVolproject() {
                                     <p>Project Location</p>
                                     <input className="form-control" type="text" name="name" placeholder="Project Location" 
                                     onChange={(e) => {
-                                        setProjectEndDate(e.target.value);
+                                        setProjectLocation(e.target.value);
                                     }}>
                                     </input>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" defaultValue="" id="invalidCheck" 
-                                    onChange={(e) => {
-                                        setProjectLocation(e.target.value);
-                                    }}></input>
+
+                                ></input>
                                         <label className="form-check-label">I confirm that all data are correct</label>
                                         <div className="invalid-feedback">Please confirm that the entered data are all correct!</div>
                                 </div>

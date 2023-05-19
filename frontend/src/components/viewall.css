@@ -1,0 +1,51 @@
+.div1{
+    color:white;
+    overflow: auto;
+     /* bg-gray-800 
+     hover:bg-gray-900 
+     focus:outline-none 
+     focus:ring-4 
+     focus:ring-gray-300 
+     font-medium 
+     rounded-full 
+     text-sm 
+     px-5 p
+     y-2.5 
+     mr-2 
+     mb-2  */
+     
+}.div2{
+    color:white;
+    overflow: auto;
+    margin-right: 5%;
+}
+.div3{
+    color:white;
+    overflow: auto;
+}
+.div4{
+    color:white;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div5{color:white;}
+.div6{
+    color:white;
+    border: 1px;
+    border-color: white;
+}
+.div7{
+    color:white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+}

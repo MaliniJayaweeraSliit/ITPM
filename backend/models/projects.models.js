@@ -1,14 +1,16 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { countDocuments } = require('./application.models');
 
 const Schema = mongoose.Schema;
 const projectSchema = new Schema({
     projectOwnerid:{
         type: Number,
-        default : null
+        defaultvalue:1
+        
     },
     projectID : {
         type : Number,
-        default : null
+
     },
     projectName : {
         type : String,
@@ -35,6 +37,14 @@ const projectSchema = new Schema({
     },
     projectLocation: {
         type : String,
+    }
+});
+
+projectSchema.pre('save',async function(){
+    const doc = this;
+    if(doc.isNew){
+        const count = await mongoose.model('Project',projectSchema).countDocuments();
+        doc.projectID = count+1;
     }
 })
 

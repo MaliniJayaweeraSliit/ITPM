@@ -7,6 +7,9 @@ import VolunteerHome from './components/volunteerHome';
 import AddVolproject from './components/addvolproject';
 import ViewVolunteer from './components/volunteerprofile';
 import UpdateVolunteer from './components/editprofile';
+import ApplyProject from './components/applyproject';
+import LoginOrganization from './components/loginorganization';
+import ViewAllProjects from './components/viewallprojects';
 
 function App() {
   return (
@@ -16,9 +19,12 @@ function App() {
     <Route path='/volunteerhome' element={<VolunteerInfo/>} />
     <Route path='/loginvolunteer' element={<LoginVolunteer/>} />
     <Route path='/homevolunteer' element={<VolunteerHome/>} />
-    <Route path='/addproject' element={<AddVolproject/>} />
+    <Route path='/organization/viewallprojects/:id/addproject' element={<AddVolproject/>} />
     <Route path='/volunteers/getvolunteer/:id/:from_login' element={<ViewVolunteer/>} />
     <Route path='/updatevolunteer/:id' element={<UpdateVolunteer/>} />
+    <Route path='/applyproject' element={<ApplyProject/>} />
+    <Route path='/loginorganization' element={<LoginOrganization/>} />
+    <Route path='/organization/viewallprojects/:id/:from_login' element={<ViewAllProjects/>} />
       </Routes>
       </BrowserRouter>
   );
