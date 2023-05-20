@@ -110,3 +110,52 @@ background-color: black;
     color: black;
     font-weight: 700;
 }
+.delete{
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius:5%;
+}.bigdelete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+}.deletesubimg{
+    width: 40%;
+    height:40%;
+    background-color: red;
+    align-items: center;
+}
+.deletesub{
+    margin-left: 30%;
+    padding-top: 10%;
+    justify-content: center;
+    align-items: center;
+}
+.buttonsmal5{
+    padding-left: 5%;
+    font-size: 30px;
+    font-weight: 900;
+   
+}
+.buttona{
+    margin-left: 2%;
+    margin-right: 10px;
+
+}.buttona{
+    color:black;
+    background-color: lightblue;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 500;
+}

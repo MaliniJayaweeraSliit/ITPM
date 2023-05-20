@@ -102,7 +102,8 @@ export default function UpdateVolunteer() {
                                         ></input>
                                     </div>
                                     <div className="subdiv">
-                                        <label htmlFor="email" className="headingtext">Volunteer Password</label>                            <br />
+                                        <label htmlFor="email" className="headingtext">Volunteer Password</label>        
+                                                       <br />
                                         <input
                                             onChange={(val) => { setPassword(val.target.value) }}
                                             value={password} type="password" id="firstname" className="headinginput"
