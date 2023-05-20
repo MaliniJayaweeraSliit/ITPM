@@ -1,19 +1,44 @@
 .div1{
-    color:white;
-    overflow: auto;
-     /* bg-gray-800 
-     hover:bg-gray-900 
-     focus:outline-none 
-     focus:ring-4 
-     focus:ring-gray-300 
-     font-medium 
-     rounded-full 
-     text-sm 
-     px-5 p
-     y-2.5 
-     mr-2 
-     mb-2  */
-     
+    color:black;
+    background-color: lightblue;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    font-weight: 500;
+}
+.div_1{
+    color:black;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    font-weight: 500;
+}
+.div_1{
+    background-color: white;
+    font-size: 30px;
+    width: 600px;
+    height:550px;
+    border-radius: 5%;
+}
+.div10{
+    color:black;
+    background-color: lightblue;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
 }.div2{
     color:white;
     overflow: auto;
@@ -48,4 +73,89 @@
     padding-left: 20px;
     padding-right: 20px;
     font-size: 20px;
+}
+.container{
+    align-items: center;
+    margin-right: 50%;
+    padding-right: 10%;
+}.div_button{
+    color:black;
+    background-color: lightblue;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.diva{
+background-color: black;
+}
+.divpn{
+    flex:content ;
+    justify-items: center;
+    align-items: center;
+}
+.divpn1{
+    font-size:30px ;
+    color: black;
+    font-weight: 900;
+    padding-left: 5%;
+}
+.divpn2{
+    padding-left: 5%;
+    font-size:20px ;
+    color: black;
+    font-weight: 700;
+}
+.delete{
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius:5%;
+}.bigdelete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+}.deletesubimg{
+    width: 40%;
+    height:40%;
+    background-color: red;
+    align-items: center;
+}
+.deletesub{
+    margin-left: 30%;
+    padding-top: 10%;
+    justify-content: center;
+    align-items: center;
+}
+.buttonsmal5{
+    padding-left: 5%;
+    font-size: 30px;
+    font-weight: 900;
+   
+}
+.buttona{
+    margin-left: 2%;
+    margin-right: 10px;
+
+}.buttona{
+    color:black;
+    background-color: lightblue;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 500;
 }

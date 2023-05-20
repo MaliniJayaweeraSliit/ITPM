@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import jsPDF from 'jspdf';
-import autoTable from 'jspdf-autotable';
 import './viewall.css';
 import { useParams } from "react-router-dom";
 
-export default function ViewAllProjects() {
+export default function ApplytoProjects() {
+    const {id} = useParams();
     const [projects, setProjects] = useState([]);
+    const [volunteer, setVolunteer] = useState([]);
     const [search, setsearch] = useState('');
 
     useEffect(() => {
+        function getVolunteer() {
+            axios.get(`http://localhost:4000/volunteer/getvolunteer/${id}`).then((res) => {
+                setVolunteer(res.data);
+            }).catch((err) => {
+                alert(err.message);
+            })
+        }
+        getVolunteer();
+        
         function getProjects() {
             axios.get("http://localhost:4000/project/getprojects").then((res) => {
                 setProjects(res.data);
@@ -18,55 +27,12 @@ export default function ViewAllProjects() {
             })
         }
         getProjects();
+        
     }, []);
 
-
-    const generatePdf = () => {
-        const doc = new jsPDF({orientation: 'landscape'} )
-        const columnStyles = {
-            projectName: { columnWidth: 40 }, 
-            projectDescription: { columnWidth: 70 }, 
-            projectCategoty:{ columnWidth: 40 },
-            projectStartDate: { columnWidth: 40 }, 
-            projectEndDate: { columnWidth: 40 }, 
-            projectLocation:{ columnWidth: 40 },
-          };
-        autoTable(doc, {
-            columns: [
-                { header: 'Project Name', dataKey: 'projectName' },
-                { header: 'Project Description', dataKey: 'projectDescription' },
-                { header: 'Project Categoty', dataKey: 'projectCategoty' },
-                { header: 'Project Start Date', dataKey: 'projectStartDate' },
-                { header: 'Project End Date', dataKey: 'projectEndDate' },
-                { header: 'Project Location', dataKey: 'projectLocation' },
-            ],
-            body: projects.map(project => {
-                return {
-                    projectName: project.projectName,
-                    projectDescription: project.projectDescription,
-                    projectCategoty: project.projectCategoty,
-                    projectStartDate: project.projectStartDate,
-                    projectEndDate: project.projectEndDate,
-                    projectLocation: project.projectLocation,
-                };
-            }),
-            columnStyles,
-        })
-        doc.save('Projects Details.pdf')
-    }
     return (
         <section className='flex gap-6'>
             <div className='w-full mr-10'>
-                <div className="p-5">
-                    <button
-                        onClick={generatePdf}
-                        className="div1">
-                        Generate PDF
-                    </button>
-                    <a href='./addproject' className="div11"><button className="div1" >Add New Project</button></a>
-                    <a href='./allapllication' className="div11"><button className="div1" >View Applications</button></a>
-                </div>
-
                 <table className="div2" border={1}>
                     <thead className="div3">
                         <tr>
@@ -89,7 +55,7 @@ export default function ViewAllProjects() {
                             projectLocation
                             </th>
                             <th scope="col" className="div4">
-                                <span className="div5">Delete</span>
+                                <span className="div5">Apply</span>
                             </th>
                         </tr>
                     </thead>
@@ -124,8 +90,8 @@ export default function ViewAllProjects() {
                                         {projects.projectLocation} 
                                     </td>
                                     <td className="div7 text-right">
-                                    {projects && <a className="diva" href={`/deleteproject/${projects._id}/false`} >
-                                        <button className="div10"> Delete</button>
+                                    {projects && <a className="diva" href={`/applytoprojects/${volunteer._id}/application/${projects._id}`} >
+                                        <button className="div10"> Apply</button>
                                     </a>}
                                     </td>
                                 </tr>

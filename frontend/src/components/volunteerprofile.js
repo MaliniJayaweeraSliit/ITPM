@@ -12,7 +12,6 @@ export default function ViewVolunteer() {
                 setVolunteer(result["data"])
             })
             .catch(err => console.log(`get volunteer data failed ${err}`))
-
     }, [id])
 
 
@@ -29,7 +28,8 @@ export default function ViewVolunteer() {
                                     <h4>{volunteer["volunteer_username"]}</h4>
                                     <p className="text-secondary mb-1">Volunteer</p>
                                     <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                                    <button className="primary">Apply for new project</button>
+                                    <a className="diva" href={`/applytoprojects/${volunteer._id}`} >
+                                        <button className="div10"> Apply to Projects</button></a>
                                 </div>}
                         </div>
                     </div>
