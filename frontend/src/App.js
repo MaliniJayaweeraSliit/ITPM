@@ -10,7 +10,8 @@ import UpdateVolunteer from './components/editprofile';
 import ApplyProject from './components/applyproject';
 import LoginOrganization from './components/loginorganization';
 import ViewAllProjects from './components/viewallprojects';
-
+import DeleteProject from './components/deleteproject';
+import ViewProject from './components/viewproject';
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,8 @@ function App() {
     <Route path='/applyproject' element={<ApplyProject/>} />
     <Route path='/loginorganization' element={<LoginOrganization/>} />
     <Route path='/organization/viewallprojects/:id/:from_login' element={<ViewAllProjects/>} />
+    <Route path='/deleteproject/:id' element={<DeleteProject/>} />
+    <Route path='/viewproject/:id/:from_login' element={<ViewProject/>} />
       </Routes>
       </BrowserRouter>
   );

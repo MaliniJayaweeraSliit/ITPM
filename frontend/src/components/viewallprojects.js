@@ -63,7 +63,8 @@ export default function ViewAllProjects() {
                         className="div1">
                         Generate PDF
                     </button>
-                    <a href='./addproject'><button>Add New Project</button></a>
+                    <a href='./addproject' className="div11"><button className="div1" >Add New Project</button></a>
+                    <a href='./allapllication' className="div11"><button className="div1" >View Applications</button></a>
                 </div>
 
                 <table className="div2" border={1}>
@@ -123,9 +124,9 @@ export default function ViewAllProjects() {
                                         {projects.projectLocation} 
                                     </td>
                                     <td className="div7 text-right">
-                                        <a href={`/viewproject/${projects._id}/false`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                            <button type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-[#ADD8E6] dark:text-black dark:border-gray-600 dark:hover:bg-[#4F310E] dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>
-                                        </a>
+                                    {projects && <a className="diva" href={`/viewproject/${projects._id}/false`} >
+                                        <button className="div10"> View</button>
+                                    </a>}
                                     </td>
                                 </tr>
                             )

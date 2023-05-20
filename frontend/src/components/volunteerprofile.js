@@ -12,7 +12,7 @@ export default function ViewVolunteer() {
                 setVolunteer(result["data"])
             })
             .catch(err => console.log(`get volunteer data failed ${err}`))
-
+{console.log(volunteer)}
     }, [id])
 
 
